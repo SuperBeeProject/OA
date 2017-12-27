@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	
+	<package name="warehouse" namespace="/"  extends="struts-default">
+		<action name="findallorder" class="cn.bdqn.j25.action.WarehouseAction"
+			method="findAllOrder">
+			<result name="success">/page/warehouse/allout.jsp</result>
+		</action>
+		
+		<action name="changeoutpageno" class="cn.bdqn.j25.action.WarehouseAction"
+			method="changeOutPageNo">
+			<result name="success">/page/warehouse/allout.jsp</result>
+		</action>
+		
+		<action name="findorderbyordernumber" class="cn.bdqn.j25.action.WarehouseAction"
+			method="findOrderByOrdernumber">
+			<result name="success">/page/warehouse/aout.jsp</result>
+		</action>
+		
+		<action name="findallprocurement" class="cn.bdqn.j25.action.WarehouseAction"
+			method="findAllProcurement">
+			<result name="success">/page/warehouse/alltematerial.jsp</result>
+		</action>
+		
+		<action name="changetematerialpageNo" class="cn.bdqn.j25.action.WarehouseAction"
+			method="changeTematerialPageNo">
+			<result name="success">/page/warehouse/alltematerial.jsp</result>
+		</action>
+	</package>
+	
+</struts>

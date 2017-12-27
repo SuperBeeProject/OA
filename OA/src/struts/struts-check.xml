@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="checks" extends="struts-default">
+		<action name="findAll" class="cn.bdqn.j25.action.ChecksAction" method="findAll">
+			<result>/page/gerenzhongxin.jsp</result>
+		</action>
+		<action name="findChecksById" class="cn.bdqn.j25.action.ChecksAction" method="findChecksById">
+			<result>/page/gerenzhongxin.jsp</result>
+		</action>
+		<action name="findChecksByEmployeeId" class="cn.bdqn.j25.action.ChecksAction" method="findChecksByEmployeeId">
+			<result>/page/gerenzhongxin.jsp</result>
+		</action>
+		<action name="findChecksByProorderId" class="cn.bdqn.j25.action.ChecksAction" method="findChecksByProorderId">
+			<result>/page/gerenzhongxin.jsp</result>
+		</action>
+		<action name="addChecks" class="cn.bdqn.j25.action.ChecksAction" method="addChecks">
+			<result name="showCheck">/page/showCheck.jsp</result>
+		</action>
+	</package>
+</struts>
+

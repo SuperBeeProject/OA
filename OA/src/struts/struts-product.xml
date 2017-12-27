@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="products" extends="struts-default">
+		<action name="addProducts" class="cn.bdqn.j25.action.productsAction" method="addProducts">
+			<result>/page/gerenzhongxin.jsp</result>
+		</action>
+		<action name="addProductsPrice" class="cn.bdqn.j25.action.productsAction" method="addProductsPrice">
+			<result>/page/gerenzhongxin.jsp</result>
+		</action>
+	</package>
+</struts>
+

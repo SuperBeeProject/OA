@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	
+	<!-- 加载Hibernate配置 -->
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+
+
+	<!-- 配置DAO -->
+	<bean id="accountsDao" class="cn.bdqn.j25.daoImpl.AccountsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="announcementDao" class="cn.bdqn.j25.daoImpl.AnnouncementDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="attendanceDao" class="cn.bdqn.j25.daoImpl.AttendanceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="checksDao" class="cn.bdqn.j25.daoImpl.ChecksDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="clockinDao" class="cn.bdqn.j25.daoImpl.ClockinDaoImle">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="contactDao" class="cn.bdqn.j25.daoImpl.ContactDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="customerDao" class="cn.bdqn.j25.daoImpl.CustomerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="departmentDao" class="cn.bdqn.j25.daoImpl.DepartmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="employeeDao" class="cn.bdqn.j25.daoImpl.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="enterDao" class="cn.bdqn.j25.daoImpl.EnterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="equipmentDao" class="cn.bdqn.j25.daoImpl.EquipmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="holidaysDao" class="cn.bdqn.j25.daoImpl.HolidaysDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="materialDao" class="cn.bdqn.j25.daoImpl.MaterialDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="monitoringDao" class="cn.bdqn.j25.daoImpl.MonitoringDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="orderrootsDao" class="cn.bdqn.j25.daoImpl.OrderrootsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="ordersDao" class="cn.bdqn.j25.daoImpl.OrdersDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="outDao" class="cn.bdqn.j25.daoImpl.OutDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="performancesDao" class="cn.bdqn.j25.daoImpl.PerformancesDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="postDao" class="cn.bdqn.j25.daoImpl.PostDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="procurementDao" class="cn.bdqn.j25.daoImpl.ProcurementDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="productDao" class="cn.bdqn.j25.daoImpl.ProductDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="proorderDao" class="cn.bdqn.j25.daoImpl.ProorderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="providerDao" class="cn.bdqn.j25.daoImpl.ProviderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="restDao" class="cn.bdqn.j25.daoImpl.RestDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="stateDao" class="cn.bdqn.j25.daoImpl.StateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="teamDao" class="cn.bdqn.j25.daoImpl.TeamDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="temporaryDao" class="cn.bdqn.j25.daoImpl.TemporaryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="typeDao" class="cn.bdqn.j25.daoImpl.TypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="wagesDao" class="cn.bdqn.j25.daoImpl.WagesDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="warehouseDao" class="cn.bdqn.j25.daoImpl.WarehouseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="workshopDao" class="cn.bdqn.j25.daoImpl.WorkshopDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 配置service  -->
+	
+	<bean id="accountsService" class="cn.bdqn.j25.serviceImpl.AccountsServiceImpl">
+		<property name="accountsDao" ref="accountsDao"></property>
+	</bean>
+	<bean id="announcementService" class="cn.bdqn.j25.serviceImpl.AnnouncementServiceImpl">
+		<property name="annoucementDao" ref="announcementDao"></property>
+	</bean>
+	<bean id="attendanceService" class="cn.bdqn.j25.serviceImpl.AttendanceServiceImpl">
+		<property name="attendanDao" ref="attendanceDao"></property>
+	</bean>
+	<bean id="checksService" class="cn.bdqn.j25.serviceImpl.ChecksServiceImpl">
+		<property name="checksDao" ref="checksDao"></property>
+	</bean>
+	<bean id="clockinService" class="cn.bdqn.j25.serviceImpl.ClockinServiceImpl">
+		<property name="clockinDao" ref="clockinDao"></property>
+	</bean>
+	<bean id="contactService" class="cn.bdqn.j25.serviceImpl.ContactServiceImpl">
+		<property name="contactDao" ref="contactDao"></property>
+	</bean>
+	<bean id="customerService" class="cn.bdqn.j25.serviceImpl.CustomerServiceImpl">
+		<property name="customerDao" ref="customerDao"></property>
+	</bean>
+	<bean id="departmentService" class="cn.bdqn.j25.serviceImpl.DepartmentServiceImpl">
+		<property name="departmentDao" ref="departmentDao"></property>
+	</bean>
+	<bean id="enterService" class="cn.bdqn.j25.serviceImpl.EnterServiceImpl">
+		<property name="enterDao" ref="enterDao"></property>
+	</bean>
+	<bean id="equipmentService" class="cn.bdqn.j25.serviceImpl.EquipmentServiceImpl">
+		<property name="equipmentDao" ref="equipmentDao"></property>
+	</bean>
+	<bean id="employeeService" class="cn.bdqn.j25.serviceImpl.EmployeeServiceImpl">
+		<property name="employeeDao" ref="employeeDao"></property>
+	</bean>
+	<bean id="holidaysService" class="cn.bdqn.j25.serviceImpl.HolidaysServiceImpl">
+		<property name="holidaysDao" ref="holidaysDao"></property>
+	</bean>
+	<bean id="materialService" class="cn.bdqn.j25.serviceImpl.MaterialServiceImpl">
+		<property name="materialDao" ref="materialDao"></property>
+	</bean>
+	<bean id="monitoringService" class="cn.bdqn.j25.serviceImpl.MonitoringServiceImpl">
+		<property name="monitoringDao" ref="monitoringDao"></property>
+	</bean>
+	<bean id="orderrootsService" class="cn.bdqn.j25.serviceImpl.OrderrootsServiceImpl">
+		<property name="orderrootsDao" ref="orderrootsDao"></property>
+	</bean>
+	<bean id="ordersService" class="cn.bdqn.j25.serviceImpl.OrdersServiceImpl">
+		<property name="ordersDao" ref="ordersDao"></property>
+	</bean>
+	<bean id="outService" class="cn.bdqn.j25.serviceImpl.OutServiceImpl">
+		<property name="outDao" ref="outDao"></property>
+	</bean>
+	<bean id="performancesService" class="cn.bdqn.j25.serviceImpl.PerformancesServiceImpl">
+		<property name="performancesDao" ref="performancesDao"></property>
+	</bean>
+	<bean id="postService" class="cn.bdqn.j25.serviceImpl.PostServiceImpl">
+		<property name="postDao" ref="postDao"></property>
+	</bean>
+	<bean id="procurementService" class="cn.bdqn.j25.serviceImpl.ProcurementServiceImpl">
+		<property name="procurementDao" ref="procurementDao"></property>
+	</bean>
+	<bean id="productService" class="cn.bdqn.j25.serviceImpl.ProductServiceImpl">
+		<property name="productDao" ref="productDao"></property>
+	</bean>
+	<bean id="proorderService" class="cn.bdqn.j25.serviceImpl.ProorderServiceImpl">
+		<property name="proorderDao" ref="proorderDao"></property>
+	</bean>
+    <bean id="providerService" class="cn.bdqn.j25.serviceImpl.ProviderServiceImpl">
+		<property name="providerDao" ref="providerDao"></property>
+	</bean>
+	<bean id="restService" class="cn.bdqn.j25.serviceImpl.RestServiceImpl">
+		<property name="restDao" ref="restDao"></property>
+	</bean>
+	<bean id="stateService" class="cn.bdqn.j25.serviceImpl.StateServiceImpl">
+		<property name="stateDao" ref="stateDao"></property>
+	</bean>
+	<bean id="teamService" class="cn.bdqn.j25.serviceImpl.TeamServiceImpl">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	<bean id="temporaryService" class="cn.bdqn.j25.serviceImpl.TemporaryServiceImpl">
+		<property name="temporaryDao" ref="temporaryService"></property>
+	</bean>
+	<bean id="typeService" class="cn.bdqn.j25.serviceImpl.TypeServiceImpl">
+		<property name="typeDao" ref="typeDao"></property>
+	</bean>
+	<bean id="wagesService" class="cn.bdqn.j25.serviceImpl.WagesServiceImpl">
+		<property name="wagesDao" ref="wagesDao"></property>
+	</bean>
+	<bean id="warehouseService" class="cn.bdqn.j25.serviceImpl.WarehouseServiceImpl">
+		<property name="warehouseDao" ref="warehouseDao"></property>
+	</bean>
+	<bean id="workshopService" class="cn.bdqn.j25.serviceImpl.WorkshopServiceImpl">
+		<property name="workshopDao" ref="workshopDao"></property>
+	</bean>
+	
+	<!-- 定义事务管理器 -->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	 <tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" propagation="REQUIRED"
+				read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED"
+				read-only="true" />
+			<tx:method name="search*" propagation="REQUIRED"
+				read-only="true" />
+			<tx:method name="query*" propagation="REQUIRED"
+				read-only="true" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="submit*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="modify*" propagation="REQUIRED" />
+			<tx:method name="check*" propagation="REQUIRED" />
+			<tx:method name="do*" propagation="REQUIRED" />
+			<tx:method name="*" propagation="REQUIRED" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="serviceMethod"
+			expression="execution(* cn.bdqn.j25.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
+	</aop:config>
+</beans>

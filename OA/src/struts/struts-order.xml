@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+		
+	<package name="josn1" extends="json-default">
+	
+		<action name="order" class="cn.bdqn.j25.action.OrderAction" method="findCustomer" >
+			<result type="json">
+				 <param name="root">listCustomer</param>
+				 <param name="excludeNullProperties">true</param>				 		 			
+			</result>
+		</action>
+		
+		<action name="order1" class="cn.bdqn.j25.action.OrderAction" method="findProduct" >
+			<result type="json">
+				<param name="root">listProduct</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+	
+		<action name="order2" class="cn.bdqn.j25.action.OrderAction" method="findprice" >
+			<result type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action> 	
+		
+		<action name="order3" class="cn.bdqn.j25.action.OrderAction" method="addOrder" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action> 
+		
+		<action name="order5" class="cn.bdqn.j25.action.OrderAction" method="pass" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="order6" class="cn.bdqn.j25.action.OrderAction" method="cancel" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="order7" class="cn.bdqn.j25.action.OrderAction" method="findAllCustomer" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action> 
+		
+		<action name="order8" class="cn.bdqn.j25.action.OrderAction" method="updateCustomer" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action> 
+		
+		<action name="order15" class="cn.bdqn.j25.action.OrderAction" method="addProOrders" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="order18" class="cn.bdqn.j25.action.OrderAction" method="addMon" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="order20" class="cn.bdqn.j25.action.OrderAction" method="addCustomer" >
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package> 
+	
+	<package name="order" extends="struts-default">
+			
+		<action name="order4" class="cn.bdqn.j25.action.OrderAction" method="findOrder" >
+			<result>/page/order/order.jsp</result>
+		</action> 
+		
+		<action name="order9" class="cn.bdqn.j25.action.OrderAction" method="findAllOrders" >
+			<result>/page/order/stateorder.jsp</result>
+		</action> 
+		
+		<action name="order10" class="cn.bdqn.j25.action.OrderAction" method="findByID" >
+			<result>/page/order/passorder.jsp</result>
+		</action> 
+		
+		<action name="order11" class="cn.bdqn.j25.action.OrderAction" method="findAllOrderByProduct" >
+			<result>/page/order/financeorder.jsp</result>
+		</action>
+		
+		<action name="order12" class="cn.bdqn.j25.action.OrderAction" method="findByID" >
+			<result>/page/order/passorder2.jsp</result>
+		</action>
+		
+		<action name="order13" class="cn.bdqn.j25.action.OrderAction" method="findOrdersByfinance" >
+			<result>/page/order/stateorder1.jsp</result>
+		</action>
+		
+		<action name="order14" class="cn.bdqn.j25.action.OrderAction" method="findByID" >
+			<result>/page/order/passorder3.jsp</result>
+		</action>
+		
+		<action name="order16" class="cn.bdqn.j25.action.OrderAction" method="findAllProorder">
+			<result>/page/order/stateorder2.jsp</result>
+		</action>
+		
+		<action name="order17" class="cn.bdqn.j25.action.OrderAction" method="findProorderByid">
+			<result>/page/order/passorder4.jsp</result>
+		</action>
+		
+		<action name="order19" class="cn.bdqn.j25.action.OrderAction" method="findAllMon">
+			<result>/page/order/stateorder3.jsp</result>
+		</action>
+		
+		
+	</package> 
+</struts>
